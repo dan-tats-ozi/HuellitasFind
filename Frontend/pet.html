@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HuellitasFind - Encuentra a tu mascota</title>
+  <link rel="shortcut icon" href="./icono/icono.png" type="image/x-icon">
+  <link rel="stylesheet" href="pet.css">
+</head>
+<body>
+  <header>
+    <h1>🐾 HuellitasFind</h1>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#equipo">Nuestro Equipo</a>
+      <a href="#contacto">Contacto</a>
+      <button id="btnLogin">Iniciar Sesión</button>
+    </nav>
+  </header>
+
+  <!-- HERO DE INICIO -->
+  <section id="inicio" class="hero hero-inicio">
+    <div class="overlay">
+      <div class="card-inicio">
+        <h2>🐾 Bienvenido a HuellitasFind</h2>
+        <p>Encuentra a tu mascota y obtén información sobre ella.</p>
+        <button id="btnBuscar" class="btn-buscar">🔍 Buscar a mi mascota</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFO DE LA MASCOTA -->
+  <section id="hero-pet-info" class="oculto">
+    <img id="pet-avatar-principal" src="" alt="Avatar de tu mascota" class="img-principal-avatar">
+    <h2 id="pet-name-principal"></h2>
+    <p><strong>Edad:</strong> <span id="pet-age-principal"></span></p>
+    <p><strong>Raza:</strong> <span id="pet-breed-principal"></span></p>
+    <p id="pet-description-principal"></p>
+    <button id="btnLocalizarPrincipal" class="btn-buscar">Localizar</button>
+    <p id="pet-location-principal" class="oculto"></p>
+
+    <!-- CALENDARIO -->
+    <div id="pet-treatments" class="treatments">
+      <h3>Tratamientos y vacunas</h3>
+      <div class="calendar-controls">
+        <button id="prevMonth">◀</button>
+        <span id="calendarMonth"></span>
+        <button id="nextMonth">▶</button>
+      </div>
+      <div id="treatment-calendar" class="calendar"></div>
+      <button id="btnAddTreatment" class="btn small">➕ Agregar tratamiento</button>
+   
+    </div>
+  </section>
+
+  <!-- SECCIONES -->
+  <section id="servicios">
+    <h2>🐕 Nuestros Servicios</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Rastreo con GPS</h3>
+        <p>Conectamos el chip de tu mascota con nuestra app para localizarlo en tiempo real.</p>
+      </div>
+      <div class="card">
+        <h3>Información</h3>
+        <p>Encuentra información sobre tu mascota con solo iniciar sesión.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipo">
+    <h2>🐧 Nuestro Equipo</h2>
+    <div class="grid">
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTMdtAhyQWUXdE-fGgrM9tX4WfqA2NR0qVhtAbTEKCFEMVbl0uXT-rAvlCatzJFA8pQZM&usqp=CAU" alt="Miembro del equipo">
+        <h3>Tatiana P.</h3>
+        <p>Diseño y desarrollo web</p>
+      </div>
+      <div class="card">
+        <img src="https://www.shutterstock.com/image-vector/penguin-flat-vector-illustration-on-260nw-2459383763.jpg" alt="Miembro del equipo">
+        <h3>Oziel R.</h3>
+        <p>Ingeniero de sistemas</p>
+      </div>
+      <div class="card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMTPClqnnvU_HHIzOTRni5boXlZhXKamwPGQ&s" alt="Miembro del equipo">
+        <h3>Daniel Rueda</h3>
+        <p>Base de datos</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto">
+    <h2>Contáctanos</h2>
+    <form id="formContacto">
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu correo" required>
+      <textarea placeholder="Escribe tu mensaje" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <p>Email: HuellitasFind.ucb.edu.com | Teléfono: +591 61167865</p>
+  </section>
+
+  <footer>
+    <p>© 2025 HuellitasFind - Encuentra a tu mascota.</p>
+  </footer>
+
+  <!-- MODAL LOGIN -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <div id="modalForms">
+        <h2 id="modalTitle">Iniciar Sesión</h2>
+        <form id="formLogin">
+          <input type="text" placeholder="Usuario" required>
+          <input type="password" placeholder="Contraseña" required>
+          <button type="submit">Entrar</button>
+          <p id="toggleForm"> ¿No tienes cuenta? <a href="#" id="linkRegistro">Regístrate</a> </p>
+        </form>
+        <form id="formRegistro" class="oculto">
+          <input type="text" placeholder="Nombre completo" required>
+          <input type="email" placeholder="Correo electrónico" required>
+          <input type="password" placeholder="Contraseña" required>
+          <input type="text" placeholder="Nombre de tu mascota" required>
+          <div class="select-container">
+            <label for="tipoMascota">Tipo de mascota:</label>
+            <select id="tipoMascota" required>
+              <option value="perro">Perro</option>
+              <option value="gato">Gato</option>
+            </select>
+          </div>
+          <input type="text" placeholder="Raza de tu mascota">
+          <button type="submit">Registrarse</button>
+          <p id="toggleFormRegistro" class="oculto"> ¿Ya tienes cuenta? <a href="#" id="linkLogin">Inicia Sesión</a> </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
